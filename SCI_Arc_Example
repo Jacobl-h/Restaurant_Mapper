@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_90ffb8bfb41b4f9433e04cc27ca28103 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var all_restaurants = [{"name": "Ana Maria", "lat": 34.0506034, "lng": -118.248593, "rating": 4.1, "reviews": 94, "cuisine": "Mexican"}, {"name": "Guisados", "lat": 34.0465738, "lng": -118.2505985, "rating": 4.6, "reviews": 2312, "cuisine": "Mexican"}, {"name": "Casa Fina Mexican Restaurant & Cantina", "lat": 34.0467488, "lng": -118.2184304, "rating": 4.4, "reviews": 1094, "cuisine": "Mexican"}, {"name": "LOQUI", "lat": 34.04548279999999, "lng": -118.235729, "rating": 4.7, "reviews": 263, "cuisine": "Mexican"}, {"name": "Tacos La 26", "lat": 34.0437734, "lng": -118.2385228, "rating": 4.5, "reviews": 1665, "cuisine": "Mexican"}, {"name": "Villa Moreliana", "lat": 34.0505355, "lng": -118.2486571, "rating": 4.4, "reviews": 543, "cuisine": "Mexican"}, {"name": "El Rancho Grande", "lat": 34.0574897, "lng": -118.237811, "rating": 4.5, "reviews": 337, "cuisine": "Mexican"}, {"name": "Ana Maria's Comida Mexicana", "lat": 34.05110519999999, "lng": -118.2494491, "rating": 4.4, "reviews": 148, "cuisine": "Mexican"}, {"name": "Cielito Lindo", "lat": 34.0579886, "lng": -118.2374002, "rating": 4.4, "reviews": 2412, "cuisine": "Mexican"}, {"name": "Tacos Tumbras a Tomas", "lat": 34.0505274, "lng": -118.2486649, "rating": 4.4, "reviews": 532, "cuisine": "Mexican"}, {"name": "Birrieria Don Boni", "lat": 34.047057, "lng": -118.2180632, "rating": 4.4, "reviews": 2099, "cuisine": "Mexican"}, {"name": "Chuy's Tacos Dorados", "lat": 34.0456281, "lng": -118.23243, "rating": 4.3, "reviews": 849, "cuisine": "Mexican"}, {"name": "Tacos 1986", "lat": 34.0458186, "lng": -118.2514334, "rating": 4.2, "reviews": 782, "cuisine": "Mexican"}, {"name": "Santa Cecilia Restaurant", "lat": 34.0476219, "lng": -118.2195633, "rating": 4.5, "reviews": 106, "cuisine": "Mexican"}, {"name": "Antojitos Puebla", "lat": 34.0467475, "lng": -118.2472391, "rating": 4.4, "reviews": 102, "cuisine": "Mexican"}, {"name": "Zamora Bros", "lat": 34.0524486, "lng": -118.2200024, "rating": 4.4, "reviews": 623, "cuisine": "Mexican"}, {"name": "El Paseo Inn", "lat": 34.0574722, "lng": -118.2378576, "rating": 4, "reviews": 1041, "cuisine": "Mexican"}, {"name": "Los Compadres De Oaxaca Restaurant", "lat": 34.059616, "lng": -118.2391586, "rating": 4, "reviews": 223, "cuisine": "Mexican"}, {"name": "La Michoacana Restaurant in East Los Angeles", "lat": 34.0515038, "lng": -118.2179815, "rating": 4.3, "reviews": 101, "cuisine": "Mexican"}, {"name": "Placita Cafe", "lat": 34.0585362, "lng": -118.2378056, "rating": 4.6, "reviews": 195, "cuisine": "Mexican"}, {"name": "Jacky\u2019s Restaurant", "lat": 34.0482615, "lng": -118.2511842, "rating": 4.7, "reviews": 19, "cuisine": "Mexican"}, {"name": "Chiguacle, Cevicheria y Cantina", "lat": 34.0570844, "lng": -118.2386807, "rating": 4.1, "reviews": 437, "cuisine": "Mexican"}, {"name": "Al & Bea's Mexican Food", "lat": 34.0451923, "lng": -118.2141145, "rating": 4.6, "reviews": 2632, "cuisine": "Mexican"}, {"name": "Pho Shop", "lat": 34.0450986, "lng": -118.2389519, "rating": 4.3, "reviews": 152, "cuisine": "Vietnamese"}, {"name": "\u00c2u L\u1ea1c", "lat": 34.0563922, "lng": -118.2508459, "rating": 4.6, "reviews": 1088, "cuisine": "Vietnamese"}, {"name": "Spitz - Little Tokyo", "lat": 34.0482084, "lng": -118.2398683, "rating": 4.4, "reviews": 1040, "cuisine": "Turkish"}, {"name": "Anwar's Kitchen", "lat": 34.0415212, "lng": -118.2516649, "rating": 4.5, "reviews": 912, "cuisine": "Turkish"}, {"name": "Nan Bistro hookah & kebap", "lat": 34.0482595, "lng": -118.246836, "rating": 4.7, "reviews": 24, "cuisine": "Turkish"}, {"name": "SORA Craft Kitchen", "lat": 34.031229, "lng": -118.2474104, "rating": 5, "reviews": 225, "cuisine": "Turkish"}, {"name": "Daikokuya Little Tokyo", "lat": 34.0500023, "lng": -118.2400575, "rating": 4.4, "reviews": 4263, "cuisine": "Turkish"}, {"name": "BunGraze: Flatbread Hamburgers", "lat": 34.048352, "lng": -118.2390804, "rating": 4.8, "reviews": 163, "cuisine": "Burgers"}, {"name": "Jim's Burgers", "lat": 34.046707, "lng": -118.2171319, "rating": 4.2, "reviews": 1787, "cuisine": "Burgers"}, {"name": "For The Win", "lat": 34.051052, "lng": -118.2493274, "rating": 4, "reviews": 154, "cuisine": "Burgers"}, {"name": "GaMGaM Burger", "lat": 34.0289407, "lng": -118.2302767, "rating": 5, "reviews": 7, "cuisine": "Burgers"}, {"name": "D-Town Burger Bar", "lat": 34.046209, "lng": -118.2515556, "rating": 4.3, "reviews": 799, "cuisine": "Burgers"}, {"name": "Jim's Burgers", "lat": 34.0339338, "lng": -118.2162174, "rating": 4, "reviews": 308, "cuisine": "Burgers"}, {"name": "Farmer Boys", "lat": 34.0320672, "lng": -118.2383731, "rating": 4.3, "reviews": 4551, "cuisine": "Burgers"}, {"name": "The Escondite", "lat": 34.0461333, "lng": -118.2421334, "rating": 4.5, "reviews": 688, "cuisine": "Burgers"}, {"name": "Beelman's", "lat": 34.0456042, "lng": -118.2511139, "rating": 4.5, "reviews": 845, "cuisine": "Burgers"}, {"name": "Park Burger", "lat": 34.0459123, "lng": -118.2359502, "rating": 4.6, "reviews": 11, "cuisine": "Burgers"}, {"name": "The Kroft | DTLA Chinatown", "lat": 34.0593901, "lng": -118.2400232, "rating": 4.7, "reviews": 86, "cuisine": "Burgers"}, {"name": "464 Burgers", "lat": 34.0467746, "lng": -118.2482737, "rating": 4.3, "reviews": 253, "cuisine": "Burgers"}, {"name": "Vuuka Restaurant", "lat": 34.0328837, "lng": -118.2295748, "rating": 4, "reviews": 11, "cuisine": "Ethiopian"}, {"name": "Purgatory Pizza", "lat": 34.047376, "lng": -118.2258179, "rating": 4.6, "reviews": 1444, "cuisine": "Pizza"}, {"name": "Pizzeria Bianco", "lat": 34.0343553, "lng": -118.2415658, "rating": 4.5, "reviews": 606, "cuisine": "Pizza"}, {"name": "Braazo Pizza", "lat": 34.043939, "lng": -118.251667, "rating": 4.4, "reviews": 786, "cuisine": "Pizza"}, {"name": "Prince Street Pizza", "lat": 34.0460152, "lng": -118.2355265, "rating": 4.3, "reviews": 493, "cuisine": "Pizza"}, {"name": "Olio Wood Fired Pizzeria GCM", "lat": 34.0506621, "lng": -118.2489405, "rating": 4.4, "reviews": 357, "cuisine": "Pizza"}, {"name": "Prime Pizza", "lat": 34.0481761, "lng": -118.2394579, "rating": 4.4, "reviews": 548, "cuisine": "Pizza"}, {"name": "Joe's Pizza", "lat": 34.0457279, "lng": -118.2515091, "rating": 4.1, "reviews": 577, "cuisine": "Pizza"}, {"name": "Bohemian House of Espresso + Chai", "lat": 34.0459418, "lng": -118.2507081, "rating": 4.8, "reviews": 420, "cuisine": "Coffee Shop"}, {"name": "Urth Caffe", "lat": 34.0419892, "lng": -118.2354609, "rating": 4.5, "reviews": 5469, "cuisine": "Coffee Shop"}, {"name": "Zinc Caf\u00e9 & Bar", "lat": 34.0393763, "lng": -118.232743, "rating": 4.4, "reviews": 1512, "cuisine": "Coffee Shop"}, {"name": "Verve Coffee Roasters", "lat": 34.0414258, "lng": -118.2327019, "rating": 4.5, "reviews": 650, "cuisine": "Coffee Shop"}, {"name": "La Monarca Bakery & Cafe", "lat": 34.0473985, "lng": -118.2200429, "rating": 4.4, "reviews": 211, "cuisine": "Coffee Shop"}, {"name": "Gourmet LA Bakery", "lat": 34.0468577, "lng": -118.2516596, "rating": 4.3, "reviews": 254, "cuisine": "Coffee Shop"}, {"name": "Catch 21", "lat": 34.0423075, "lng": -118.2401248, "rating": 4.3, "reviews": 1142, "cuisine": "Seafood"}, {"name": "Mayflower Seafood Restaurant", "lat": 34.0595873, "lng": -118.2381618, "rating": 4.2, "reviews": 849, "cuisine": "Seafood"}, {"name": "Yuko Kitchen DTLA", "lat": 34.0469661, "lng": -118.2485418, "rating": 4.6, "reviews": 474, "cuisine": "Japanese"}, {"name": "OOmasa", "lat": 34.0492818, "lng": -118.2396138, "rating": 4.4, "reviews": 747, "cuisine": "Japanese"}, {"name": "KazuNori: The Original Hand Roll Bar", "lat": 34.0476757, "lng": -118.2478405, "rating": 4.6, "reviews": 1627, "cuisine": "Japanese"}, {"name": "TOT Little Tokyo", "lat": 34.048594, "lng": -118.2405021, "rating": 4.4, "reviews": 426, "cuisine": "Japanese"}, {"name": "Marugame Monzo", "lat": 34.0499422, "lng": -118.2400485, "rating": 4.6, "reviews": 1525, "cuisine": "Japanese"}, {"name": "KAMINARI GYOZA BAR", "lat": 34.0500127, "lng": -118.2401499, "rating": 4.8, "reviews": 132, "cuisine": "Japanese"}, {"name": "Zencu Sushi & Grill", "lat": 34.0493913, "lng": -118.2407016, "rating": 4.2, "reviews": 670, "cuisine": "Japanese"}, {"name": "Suehiro DTLA", "lat": 34.0478477, "lng": -118.2472086, "rating": 4.7, "reviews": 167, "cuisine": "Japanese"}, {"name": "Rice & Nori", "lat": 34.0500698, "lng": -118.2424067, "rating": 4.5, "reviews": 439, "cuisine": "Japanese"}, {"name": "Mr. Ramen", "lat": 34.0497136, "lng": -118.2397194, "rating": 4.4, "reviews": 905, "cuisine": "Japanese"}, {"name": "Tokyo Haus Sushi & Grill All You Can Eat", "lat": 34.0500717, "lng": -118.2423816, "rating": 3.7, "reviews": 264, "cuisine": "Japanese"}, {"name": "Tenno Sushi", "lat": 34.0473991, "lng": -118.2395813, "rating": 4.4, "reviews": 1590, "cuisine": "Japanese"}, {"name": "RAKKAN Ramen DTLA", "lat": 34.0495729, "lng": -118.2394299, "rating": 4.5, "reviews": 1103, "cuisine": "Japanese"}, {"name": "Kombu Sushi", "lat": 34.0446637, "lng": -118.2325292, "rating": 4.6, "reviews": 197, "cuisine": "Japanese"}, {"name": "Sushi Rush", "lat": 34.051052, "lng": -118.2493274, "rating": 4.1, "reviews": 49, "cuisine": "Japanese"}, {"name": "IZAKAYA Taberu Japanese Restaurant", "lat": 34.0454388, "lng": -118.235931, "rating": 4.6, "reviews": 154, "cuisine": "Japanese"}, {"name": "Pikunico", "lat": 34.0352606, "lng": -118.2403461, "rating": 4.4, "reviews": 232, "cuisine": "Japanese"}, {"name": "AFURI", "lat": 34.0351919, "lng": -118.232228, "rating": 4.5, "reviews": 754, "cuisine": "Japanese"}, {"name": "Yunomi Handroll", "lat": 34.0457256, "lng": -118.2359452, "rating": 4.5, "reviews": 256, "cuisine": "Japanese"}, {"name": "Daikokuya Little Tokyo", "lat": 34.0500023, "lng": -118.2400575, "rating": 4.4, "reviews": 4263, "cuisine": "Japanese"}, {"name": "Kura Revolving Sushi Bar", "lat": 34.0488172, "lng": -118.2407154, "rating": 4.5, "reviews": 2814, "cuisine": "Japanese"}, {"name": "Sushi & Teri", "lat": 34.0488417, "lng": -118.2399071, "rating": 4.1, "reviews": 284, "cuisine": "Japanese"}, {"name": "Chinchikurin Little Tokyo", "lat": 34.0494237, "lng": -118.2397765, "rating": 4.5, "reviews": 1006, "cuisine": "Japanese"}, {"name": "Izakaya BIZAN", "lat": 34.0451768, "lng": -118.2382879, "rating": 4.3, "reviews": 570, "cuisine": "Japanese"}, {"name": "Ramen Yamadaya", "lat": 34.0489397, "lng": -118.2405851, "rating": 3.8, "reviews": 179, "cuisine": "Japanese"}, {"name": "YESS", "lat": 34.0347117, "lng": -118.2321469, "rating": 4.3, "reviews": 119, "cuisine": "Japanese"}, {"name": "Orochon Ramen", "lat": 34.0498942, "lng": -118.2423094, "rating": 4.4, "reviews": 1405, "cuisine": "Japanese"}, {"name": "Kinjiro", "lat": 34.0467287, "lng": -118.2385761, "rating": 4.7, "reviews": 140, "cuisine": "Japanese"}, {"name": "Izakaya Gazen", "lat": 34.0490533, "lng": -118.2394136, "rating": 4.5, "reviews": 397, "cuisine": "Japanese"}, {"name": "Sushi Gala", "lat": 34.0493054, "lng": -118.2397804, "rating": 4, "reviews": 429, "cuisine": "Japanese"}, {"name": "Ramen Maruya", "lat": 34.0491164, "lng": -118.2397439, "rating": 4.4, "reviews": 885, "cuisine": "Japanese"}, {"name": "Girl & the Goat Los Angeles", "lat": 34.0402258, "lng": -118.2331693, "rating": 4.8, "reviews": 2986, "cuisine": "New American"}, {"name": "Redbird", "lat": 34.0506001, "lng": -118.244075, "rating": 4.6, "reviews": 1728, "cuisine": "New American"}, {"name": "Bar Americano", "lat": 34.0461461, "lng": -118.2342514, "rating": 4.5, "reviews": 555, "cuisine": "New American"}, {"name": "Blu Jam Cafe", "lat": 34.0468646, "lng": -118.251202, "rating": 4.3, "reviews": 1575, "cuisine": "New American"}, {"name": "Hill Street Bar & Restaurant", "lat": 34.0529459, "lng": -118.2477338, "rating": 4.5, "reviews": 297, "cuisine": "New American"}, {"name": "Wurstk\u00fcche", "lat": 34.0455078, "lng": -118.2360354, "rating": 4.6, "reviews": 5202, "cuisine": "New American"}, {"name": "BunGraze: Flatbread Hamburgers", "lat": 34.048352, "lng": -118.2390804, "rating": 4.8, "reviews": 163, "cuisine": "Traditional American"}, {"name": "Girl & the Goat Los Angeles", "lat": 34.0402258, "lng": -118.2331693, "rating": 4.8, "reviews": 2986, "cuisine": "Traditional American"}, {"name": "Jose Chiquito", "lat": 34.0507013, "lng": -118.2490374, "rating": 4.5, "reviews": 217, "cuisine": "Traditional American"}, {"name": "Arts District Brewing Company", "lat": 34.0447347, "lng": -118.2352647, "rating": 4.5, "reviews": 3676, "cuisine": "Traditional American"}, {"name": "Bar Americano", "lat": 34.0461461, "lng": -118.2342514, "rating": 4.5, "reviews": 555, "cuisine": "Traditional American"}, {"name": "Gumbo Boys", "lat": 34.0441819, "lng": -118.2508665, "rating": 4.1, "reviews": 137, "cuisine": "Traditional American"}, {"name": "Yuko Kitchen DTLA", "lat": 34.0469661, "lng": -118.2485418, "rating": 4.6, "reviews": 474, "cuisine": "Traditional American"}, {"name": "D-Town Burger Bar", "lat": 34.046209, "lng": -118.2515556, "rating": 4.3, "reviews": 799, "cuisine": "Traditional American"}, {"name": "Paul's Kitchen", "lat": 34.0354008, "lng": -118.2516776, "rating": 4.6, "reviews": 795, "cuisine": "Chinese"}, {"name": "China Cafe", "lat": 34.0505719, "lng": -118.2486228, "rating": 3.6, "reviews": 370, "cuisine": "Chinese"}, {"name": "Jin Dragon Chinese Food", "lat": 34.0343741, "lng": -118.2152037, "rating": 4.5, "reviews": 65, "cuisine": "Chinese"}, {"name": "ABC Chinese Fast Food", "lat": 34.0439485, "lng": -118.2516319, "rating": 4.4, "reviews": 246, "cuisine": "Chinese"}, {"name": "Jin China Bistro", "lat": 34.0498684, "lng": -118.2422707, "rating": 4.5, "reviews": 117, "cuisine": "Chinese"}, {"name": "Chinese Taste Fast Food", "lat": 34.05122790000001, "lng": -118.2179808, "rating": 4.4, "reviews": 167, "cuisine": "Chinese"}, {"name": "Mayflower Seafood Restaurant", "lat": 34.0595873, "lng": -118.2381618, "rating": 4.2, "reviews": 849, "cuisine": "Chinese"}, {"name": "Maccheroni Republic", "lat": 34.0500306, "lng": -118.2485361, "rating": 4.6, "reviews": 2931, "cuisine": "Italian"}, {"name": "Bestia", "lat": 34.0336488, "lng": -118.2292434, "rating": 4.6, "reviews": 3813, "cuisine": "Italian"}, {"name": "Hearts & Flame", "lat": 34.0464262, "lng": -118.2353209, "rating": 4.2, "reviews": 166, "cuisine": "Italian"}, {"name": "The Factory Kitchen", "lat": 34.0389831, "lng": -118.2358783, "rating": 4.5, "reviews": 1021, "cuisine": "Italian"}, {"name": "De La Nonna - Art's District", "lat": 34.0450286, "lng": -118.2374984, "rating": 4.4, "reviews": 350, "cuisine": "Italian"}, {"name": "Jumsim", "lat": 34.051382, "lng": -118.2456091, "rating": 5, "reviews": 200, "cuisine": "Korean"}, {"name": "Jincook", "lat": 34.0498435, "lng": -118.2398021, "rating": 4.8, "reviews": 57, "cuisine": "Korean"}, {"name": "Korea BBQ House", "lat": 34.0498176, "lng": -118.2422048, "rating": 4.3, "reviews": 344, "cuisine": "Korean"}, {"name": "Korean Kitchen Hibachi BBQ.", "lat": 34.049119, "lng": -118.2405215, "rating": 4.4, "reviews": 366, "cuisine": "Korean"}, {"name": "Spitz - Little Tokyo", "lat": 34.0482084, "lng": -118.2398683, "rating": 4.4, "reviews": 1040, "cuisine": "Mediterranean"}, {"name": "Anwar's Kitchen", "lat": 34.0415212, "lng": -118.2516649, "rating": 4.5, "reviews": 912, "cuisine": "Mediterranean"}, {"name": "Chubby Cattle BBQ | Little Tokyo", "lat": 34.0481164, "lng": -118.2403705, "rating": 4.9, "reviews": 1867, "cuisine": "Barbecue"}, {"name": "Maple Block Barbecue", "lat": 34.0508842, "lng": -118.2494428, "rating": 3.6, "reviews": 65, "cuisine": "Barbecue"}, {"name": "KB 333 Korean BBQ", "lat": 34.0452804, "lng": -118.2385635, "rating": 4, "reviews": 1472, "cuisine": "Barbecue"}, {"name": "Korean Kitchen Hibachi BBQ.", "lat": 34.049119, "lng": -118.2405215, "rating": 4.4, "reviews": 366, "cuisine": "Barbecue"}, {"name": "Korea BBQ House", "lat": 34.0498176, "lng": -118.2422048, "rating": 4.3, "reviews": 344, "cuisine": "Barbecue"}, {"name": "bb.q Chicken LA Little Tokyo", "lat": 34.047186, "lng": -118.2387569, "rating": 4.2, "reviews": 332, "cuisine": "Barbecue"}, {"name": "Dickey's Barbecue Pit", "lat": 34.046655, "lng": -118.250964, "rating": 3.3, "reviews": 57, "cuisine": "Barbecue"}, {"name": "Thai Deli", "lat": 34.050465, "lng": -118.2150858, "rating": 4.7, "reviews": 1114, "cuisine": "Thai"}, {"name": "White Elephant", "lat": 34.046655, "lng": -118.250964, "rating": 4.3, "reviews": 165, "cuisine": "Thai"}, {"name": "Sticky Rice", "lat": 34.0507133, "lng": -118.2488226, "rating": 4, "reviews": 355, "cuisine": "Thai"}, {"name": "Curry boys (DTLA)", "lat": 34.0470743, "lng": -118.2501071, "rating": 4.3, "reviews": 161, "cuisine": "Indian"}, {"name": "Casa India", "lat": 34.0498073, "lng": -118.2489061, "rating": 4.2, "reviews": 120, "cuisine": "Indian"}, {"name": "BADMAASH Downtown LA", "lat": 34.0511033, "lng": -118.2448571, "rating": 4.1, "reviews": 1729, "cuisine": "Indian"}, {"name": "Perch", "lat": 34.0489961, "lng": -118.2514107, "rating": 4.4, "reviews": 7156, "cuisine": "French"}, {"name": "Kendall's Brasserie", "lat": 34.0562547, "lng": -118.2486515, "rating": 4.2, "reviews": 522, "cuisine": "French"}, {"name": "Le Petit Paris", "lat": 34.0483433, "lng": -118.248527, "rating": 4.3, "reviews": 1008, "cuisine": "French"}, {"name": "Camphor", "lat": 34.0466393, "lng": -118.234263, "rating": 4.4, "reviews": 266, "cuisine": "French"}, {"name": "Cole's French Dip", "lat": 34.0447898, "lng": -118.2495086, "rating": 4.4, "reviews": 1656, "cuisine": "French"}, {"name": "Philippe The Original", "lat": 34.0596429, "lng": -118.2370588, "rating": 4.6, "reviews": 11725, "cuisine": "French"}, {"name": "L'APPART by AIR FOOD", "lat": 34.046655, "lng": -118.250964, "rating": 4.7, "reviews": 142, "cuisine": "French"}, {"name": "Blu Jam Cafe", "lat": 34.0468646, "lng": -118.251202, "rating": 4.3, "reviews": 1575, "cuisine": "French"}, {"name": "Zinc Caf\u00e9 & Bar", "lat": 34.0393763, "lng": -118.232743, "rating": 4.4, "reviews": 1512, "cuisine": "French"}, {"name": "Camelia", "lat": 34.0355993, "lng": -118.2326116, "rating": 4.3, "reviews": 116, "cuisine": "French"}, {"name": "Hearts & Flame", "lat": 34.0464262, "lng": -118.2353209, "rating": 4.2, "reviews": 166, "cuisine": "French"}, {"name": "Wurstk\u00fcche", "lat": 34.0455078, "lng": -118.2360354, "rating": 4.6, "reviews": 5202, "cuisine": "French"}, {"name": "Urth Caffe", "lat": 34.0419892, "lng": -118.2354609, "rating": 4.5, "reviews": 5469, "cuisine": "French"}];
+                var cuisineLayers = {};
+                var mapInstance = map_90ffb8bfb41b4f9433e04cc27ca28103;
+                
+                // Set z-index for Leaflet controls to ensure they are on top.
+                var mapPane = document.querySelector('.leaflet-control-container');
+                if (mapPane) {
+                    mapPane.style.zIndex = 1000;
+                }
+
+                // Cuisine layer control
+                var layerControlDiv = L.DomUtil.create('div', 'leaflet-control-layers leaflet-control');
+                layerControlDiv.style.position = 'absolute';
+                layerControlDiv.style.top = '10px';
+                layerControlDiv.style.right = '10px';
+                layerControlDiv.style.zIndex = 1001; // Ensure this is above other map elements
+                mapInstance.getContainer().appendChild(layerControlDiv);
+
+                var cuisines = [...new Set(all_restaurants.map(r => r.cuisine))];
+                cuisines.forEach(function(cuisine) {
+                    cuisineLayers[cuisine] = L.layerGroup();
+                });
+                
+                var layerControl = L.control.layers({}, cuisineLayers, {collapsed: false}).addTo(mapInstance);
+                
+                // We've changed the position to be more reliable and visible.
+                var sliderDiv = L.DomUtil.create('div', 'leaflet-control');
+                sliderDiv.style.position = 'absolute';
+                sliderDiv.style.top = '10px';
+                sliderDiv.style.left = '50%';
+                sliderDiv.style.transform = 'translateX(-50%)';
+                sliderDiv.style.background = 'white';
+                sliderDiv.style.padding = '15px';
+                sliderDiv.style.borderRadius = '10px';
+                sliderDiv.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                sliderDiv.style.display = 'flex';
+                sliderDiv.style.alignItems = 'center';
+                sliderDiv.style.gap = '10px';
+                sliderDiv.style.zIndex = 1001; // Ensure this is above other map elements
+
+                sliderDiv.innerHTML = `
+                    <label for="rating-slider" style="font-family: sans-serif; font-size: 14px; white-space: nowrap;">Min. Rating: </label>
+                    <input type="range" id="rating-slider" min="1" max="5" value="4" step="0.1" style="width: 200px;">
+                    <span id="rating-value" style="font-family: monospace; font-size: 14px; font-weight: bold; width: 40px; text-align: right;">4.0</span>
+                `;
+                
+                mapInstance.getContainer().appendChild(sliderDiv);
+                
+                var slider = document.getElementById('rating-slider');
+                var valueSpan = document.getElementById('rating-value');
+                
+                function updateMapMarkers() {
+                    var minRating = parseFloat(slider.value);
+                    valueSpan.textContent = minRating.toFixed(1);
+
+                    // Clear all existing markers
+                    Object.values(cuisineLayers).forEach(layer => layer.clearLayers());
+
+                    // Add markers for each cuisine based on the filter
+                    cuisines.forEach(function(cuisine) {
+                        all_restaurants.filter(r => r.cuisine === cuisine).forEach(function(r) {
+                            if (r.rating >= minRating) {
+                                var popupContent = '<b>' + r.name + '</b><br>Rating: ' + r.rating + ' stars<br>Reviews: ' + r.reviews;
+                                var marker = L.circleMarker([r.lat, r.lng], {
+                                    radius: 5,
+                                    color: '#007bff', // Use a nice blue color
+                                    fillColor: '#007bff',
+                                    fillOpacity: 0.7
+                                }).bindPopup(popupContent);
+                                marker.addTo(cuisineLayers[cuisine]);
+                            }
+                        });
+                    });
+                }
+                
+                updateMapMarkers();
+                slider.addEventListener('input', updateMapMarkers);
+
+                // Add all layers initially
+                cuisines.forEach(function(cuisine) {
+                    cuisineLayers[cuisine].addTo(mapInstance);
+                });
+            });
+        </script>
+    
+    
+            <div class="folium-map" id="map_90ffb8bfb41b4f9433e04cc27ca28103" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_90ffb8bfb41b4f9433e04cc27ca28103 = L.map(
+                "map_90ffb8bfb41b4f9433e04cc27ca28103",
+                {
+                    center: [34.0506034, -118.248593],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2994ad3cee47122ddcba9beecb4d0a23 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2994ad3cee47122ddcba9beecb4d0a23.addTo(map_90ffb8bfb41b4f9433e04cc27ca28103);
+        
+</script>
+</html>
