@@ -100,10 +100,10 @@ Rating Filter: Use the slider at the top of the map to dynamically hide markers 
 Cuisine Layers: Use the layer control box (usually on the top-right) to toggle the visibility of entire cuisine categories.
 
 📁 File Structure
-.
-├── Restaurant_Mapper_NOAPI.py  # The main Python script
-├── README.md                  # This file
-└── venv/                      # Python virtual environment (after setup)
-└── restaurant_map.html        # GENERATED map output file
+ .
+ ├── Restaurant_Mapper_NOAPI.py  # The main Python script
+ ├── README.md                  # This file
+ └── venv/                      # Python virtual environment (after setup)
+ └── restaurant_map.html        # GENERATED map output file
 
 
