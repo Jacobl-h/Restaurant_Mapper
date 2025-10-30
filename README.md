@@ -101,9 +101,13 @@ Cuisine Layers: Use the layer control box (usually on the top-right) to toggle t
 
 📁 File Structure
  .
- ├── Restaurant_Mapper_NOAPI.py  # The main Python script
- ├── README.md                  # This file
- └── venv/                      # Python virtual environment (after setup)
- └── restaurant_map.html        # GENERATED map output file
+
+├── Restaurant_Mapper_NOAPI.py  # The main Python script
+
+├── README.md                  # This file
+
+└── venv/                      # Python virtual environment (after setup)
+
+└── restaurant_map.html        # GENERATED map output file
 
 
