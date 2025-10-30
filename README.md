@@ -30,7 +30,7 @@ Open the Restaurant_Mapper_NOAPI.py file and replace the placeholder with your a
 API_KEY = "YOUR_API_KEY"  # <-- Paste your key here!
 
 
-⚙️ Installation
+# Installation
 1. Clone the Repository
 git clone [https://github.com/your-username/restaurant-mapper.git](https://github.com/your-username/restaurant-mapper.git)
 cd restaurant-mapper
@@ -38,12 +38,14 @@ cd restaurant-mapper
 
 2. Python Environment Setup
 It is highly recommended to use a virtual environment to manage dependencies.
-# Create a virtual environment
+
+Create a virtual environment
 python3 -m venv venv
 
-# Activate the virtual environment
+Activate the virtual environment
+
 source venv/bin/activate  # On Linux/macOS
-# venv\Scripts\activate  # On Windows
+env\Scripts\activate  # On Windows
 
 
 3. Install Required Libraries
@@ -55,14 +57,15 @@ The installed packages are:
 googlemaps: For interfacing with the Google Places API.
 folium: For generating the interactive Leaflet map.
 pandas: Although not strictly necessary for the core functionality, it is often included in data projects, and your script imports it (though it doesn't use it, it's good practice to install all imported libraries).
-🚀 Usage
+
+# Usage
 Once the API key is configured and dependencies are installed, you can run the script from your terminal:
 python Restaurant_Mapper_NOAPI.py
-
 
 The script will prompt you for two inputs:
 Enter a street address to center the search on: (e.g., 123 Main St, New York, NY)
 Enter a search radius in meters: (e.g., 5000 for 5 kilometers, or 50000 for 50 kilometers)
+
 The script will then:
 Geocode your address to latitude and longitude.
 Iterate through the TOP_CUISINES list (defined in the Python file) and query the Google Places API for each.
@@ -71,13 +74,18 @@ Generate and save the interactive map file.
 
 # Getting Results
 Output File
+
 After the script completes, a new file will be created in the same directory:
+
 restaurant_map.html
+
 Viewing the Map
+
 Open this HTML file in any web browser to view the interactive map.
 Markers: Each blue marker represents a restaurant. Click on a marker to see its name, rating, and number of reviews.
 Rating Filter: Use the slider at the top of the map to dynamically hide markers that fall below the selected minimum star rating.
 Cuisine Layers: Use the layer control box (usually on the top-right) to toggle the visibility of entire cuisine categories.
+
 📁 File Structure
 .
 ├── Restaurant_Mapper_NOAPI.py  # The main Python script
