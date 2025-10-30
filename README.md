@@ -1,24 +1,37 @@
-Restaurant Mapper
+# Restaurant Mapper
+
 An interactive data visualization tool built in Python that utilizes the Google Places API to search for restaurants of various cuisines within a specified radius of a given location and maps the results using the Folium library.
 The resulting output is a single, filterable HTML file (restaurant_map.html) which allows users to:
+
 View restaurants plotted as markers on an interactive map.
+
 Filter restaurants based on a minimum star rating.
+
 Toggle visibility of different cuisine layers.
 
-🌟 Features
+# Features
 
 Google Places API Integration: Uses googlemaps client for reliable geo-coding and nearby searches with built-in pagination handling to fetch maximum results.
+
 Customizable Search: Users input a central street address and a custom search radius (in meters).
+
 Interactive Mapping: Generates a stunning interactive map using Folium and Leaflet.js.
+
 Dynamic Filtering: Includes a JavaScript slider on the map for real-time filtering of restaurants by minimum rating (e.g., show only restaurants rated 4.5 stars and above).
+
 Cuisine Layer Control: Allows users to easily hide or show markers for specific cuisine categories.
-🛠️ Prerequisites
+
+
+# Prerequisites
 
 Before you begin, you need to have Python and a few packages installed, and most importantly, a Google Cloud Project with the necessary APIs enabled.
+
 1. Google API Key Setup (CRITICAL)
+
 This script requires a valid Google API Key with the following services enabled in your Google Cloud Project:
 Places API (for fetching nearby restaurant data).
 Geocoding API (for converting the user-input street address to coordinates).
+
 Steps to Obtain and Configure Your Key:
 Go to the Google Cloud Console.
 Create a new project (if you don't have one).
