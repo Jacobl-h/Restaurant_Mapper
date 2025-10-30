@@ -4,13 +4,16 @@ The resulting output is a single, filterable HTML file (restaurant_map.html) whi
 View restaurants plotted as markers on an interactive map.
 Filter restaurants based on a minimum star rating.
 Toggle visibility of different cuisine layers.
+
 🌟 Features
+
 Google Places API Integration: Uses googlemaps client for reliable geo-coding and nearby searches with built-in pagination handling to fetch maximum results.
 Customizable Search: Users input a central street address and a custom search radius (in meters).
 Interactive Mapping: Generates a stunning interactive map using Folium and Leaflet.js.
 Dynamic Filtering: Includes a JavaScript slider on the map for real-time filtering of restaurants by minimum rating (e.g., show only restaurants rated 4.5 stars and above).
 Cuisine Layer Control: Allows users to easily hide or show markers for specific cuisine categories.
 🛠️ Prerequisites
+
 Before you begin, you need to have Python and a few packages installed, and most importantly, a Google Cloud Project with the necessary APIs enabled.
 1. Google API Key Setup (CRITICAL)
 This script requires a valid Google API Key with the following services enabled in your Google Cloud Project:
@@ -22,6 +25,7 @@ Create a new project (if you don't have one).
 Navigate to APIs & Services > Credentials and generate an API key.
 Important Security Step: Restrict the API key to prevent misuse. Configure it to only allow requests from the Places API and Geocoding API.
 Open the Restaurant_Mapper_NOAPI.py file and replace the placeholder with your actual key:
+
 # IMPORTANT: You must replace 'YOUR_API_KEY' with your actual API key
 API_KEY = "YOUR_API_KEY"  # <-- Paste your key here!
 
@@ -64,7 +68,8 @@ Geocode your address to latitude and longitude.
 Iterate through the TOP_CUISINES list (defined in the Python file) and query the Google Places API for each.
 Process and consolidate all the retrieved data.
 Generate and save the interactive map file.
-✨ Getting Results
+
+# Getting Results
 Output File
 After the script completes, a new file will be created in the same directory:
 restaurant_map.html
